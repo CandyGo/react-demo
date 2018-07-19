@@ -1,0 +1,15 @@
+.psbox {
+  width: 120px;
+  height: 31px;
+  color: white;  
+  float: right;
+}
+.psbox a{
+  color: white;  
+}
+.routerCont{
+  margin-top: 20px;
+  min-height: 700px;
+}
+
+

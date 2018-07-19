@@ -1,0 +1,16 @@
+.loginform {
+  margin-top: 5px;
+}
+
+.loginformbutton {
+    width: 100%;
+}
+.loginName{
+    font-size: 20px;
+    font-weight: bold;
+}
+.loginWrap{
+    max-width: 300px;
+    margin:0px auto;
+    margin-top: 120px;
+}

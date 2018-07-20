@@ -17,13 +17,6 @@ class IndexPage extends React.Component{
     });
   }
   
-  handleOk = (e) => {
-    console.log(e);
-    this.setState({
-      visible: false,
-    });
-  }
-  
   handleCancel = (e) => {
     console.log(e);
     this.setState({
@@ -61,13 +54,10 @@ class IndexPage extends React.Component{
   
       {/* 修改密码弹窗 */}
       <Modal
+        footer={null}
         title="修改密码"
         visible={this.state.visible}
-        onOk={this.handleOk}
-        onCancel={this.handleCancel}
-        okText="确认"
-        cancelText="取消"
-        >
+        onCancel={this.handleCancel}>
           <ChangePw />
        </Modal>
     </Layout>

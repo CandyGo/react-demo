@@ -45,29 +45,26 @@ const columns = [{
 class ProductList extends React.Component{
     constructor(props) {
         super(props);
+       
         this.onChange = props.onChange;
-    }
-    state = { visible: false }
+        this.showModal = props.showModal;
+        this.handleOk = props.handleOk;
+        this.handleCancel = props.handleCancel;
 
-    showModal = () => {
-      this.setState({
-        visible: true,
-      });
+        this.state={
+           addVisible:props.addVisible
+        }
     }
-  
-    handleOk = (e) => {
-      console.log(e);
-      this.setState({
-        visible: false,
-      });
+    
+    componentWillReceiveProps(props){
+       if(props.addVisible != this.state.addVisible){
+           this.setState({
+            addVisible:props.addVisible
+           })
+       }
     }
-  
-    handleCancel = (e) => {
-      console.log(e);
-      this.setState({
-        visible: false,
-      });
-    }
+
+   
   
     render(){
         return(
@@ -81,7 +78,7 @@ class ProductList extends React.Component{
                {/* 上传弹窗 */}
                <Modal
                  title="上传文档"
-                 visible={this.state.visible}
+                 visible={this.state.addVisible}
                  onOk={this.handleOk}
                  onCancel={this.handleCancel}
                  okText="确认"

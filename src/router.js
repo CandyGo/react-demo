@@ -9,7 +9,7 @@ function RouterConfig({ history }) {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/index" component={IndexPage} />
-        <Redirect path="/" exact to="/index" />
+        <Redirect path="/" exact to="/login" />
       </Switch>
     </Router>
   );

@@ -17,28 +17,23 @@ class ProjectList extends React.Component{
    constructor(props) {
     super(props);
     this.onChange = props.onChange;
-    this.state = {
-       text1:123
+    this.showModal = props.showModal;
+    this.handleOk = props.handleOk;
+    this.handleCancel = props.handleCancel;
+
+    this.state={
+       addVisible:props.addVisible
     }
    }
-   state = { visible: false }
-   showModal = () => {
-    this.setState({
-      visible: true,
-    });
+
+   componentWillReceiveProps(props){
+    if(props.addVisible != this.state.addVisible){
+        this.setState({
+         addVisible:props.addVisible
+        })
+    }
   }
 
-  handleOk = (e) => {
-    this.setState({
-      visible: false,
-    });
-  }
-
-  handleCancel = (e) => {
-    this.setState({
-      visible: false,
-    });
-  }
 
    render(){
    
@@ -72,7 +67,7 @@ class ProjectList extends React.Component{
         {/* 项目添加 弹窗 */}
         <Modal
           title="创建项目"
-          visible={this.state.visible}
+          visible={this.state.addVisible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
           okText="确认"
